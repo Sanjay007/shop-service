@@ -11,10 +11,14 @@ Step 3 :-
 server Starts in port 9000
 
 Step 4:-
-Navigate to UI Folder Inside Workspace   .. Make Sure Node JS and NPM is Installed
+Navigate to UI Folder Inside Workspace  
+
+.. Make Sure Node JS and NPM is Installed
 
 Step 5 :-
 > npm install
 
 Step 6 :-
-npm start - Server Starts at 30000
+npm start
+
+- Server Starts at 30000
