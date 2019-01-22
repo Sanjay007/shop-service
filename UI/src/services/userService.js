@@ -33,7 +33,7 @@ function addItem(reqObj) {
 
 function getItembyCategory(id) {
   return axios
-    .get(`${url}/category/${id}/items`)
+    .get(`${url}/category/${id}/item`)
     .then(response => {
       return Promise.resolve(response);
     })

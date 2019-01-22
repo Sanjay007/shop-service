@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.idealo.input.ItemInput;
 import com.idealo.output.APIResponse;
 import com.idealo.services.ItemService;
+import com.idealo.constants.AppConstants;
 
 @RestController
 public class ItemsController {
@@ -20,15 +21,15 @@ public class ItemsController {
 		this.itemService = itemService;
 	}
 
-	@PostMapping("/item")
-	@CrossOrigin(origins = "http://localhost:3000")
+	@PostMapping(AppConstants.R_ITEMS)
+	@CrossOrigin(origins = AppConstants.CORS)
 	public APIResponse addItem(@RequestBody ItemInput input) {
 
 		return itemService.saveItem(input);
 	}
 
-	@GetMapping("/category/{CategoryId}/items")
-	@CrossOrigin(origins = "http://localhost:3000")
+	@GetMapping(AppConstants.R_CATEGORY+"/{CategoryId}"+AppConstants.R_ITEMS)
+	@CrossOrigin(origins = AppConstants.CORS)
 	public APIResponse getAllitems(@PathVariable("CategoryId") Long id) {
 
 		return itemService.getItems(id);

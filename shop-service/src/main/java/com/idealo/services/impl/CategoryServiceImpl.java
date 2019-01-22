@@ -59,7 +59,13 @@ public class CategoryServiceImpl implements CategoryService {
 
 		return new APIResponse(allRespCategories);
 	}
-
+	
+	
+	/**
+	 * Validating null inputs and Duplicate Category
+	 * @param input
+	 * @return
+	 */
 	private APIResponse ValidateInput(CategoryInput input) {
 
 		if (StringUtils.isEmpty(input.getTitle())) {

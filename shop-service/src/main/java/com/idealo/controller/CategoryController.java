@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.idealo.input.CategoryInput;
 import com.idealo.output.APIResponse;
 import com.idealo.services.CategoryService;
-
+import com.idealo.constants.AppConstants;
 @RestController
 public class CategoryController {
 	
@@ -24,16 +24,16 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 
-	@PostMapping("/category")
-	@CrossOrigin(origins = "http://localhost:3000")
+	@PostMapping(AppConstants.R_CATEGORY)
+	@CrossOrigin(origins = AppConstants.CORS)
 	public APIResponse SaveCategory(@RequestBody CategoryInput input) {
 
 		logger.info("Category Save Request Initialized");
 		return categoryService.saveCategory(input);
 	}
 
-	@GetMapping("/category")
-	@CrossOrigin(origins = "http://localhost:3000")
+	@GetMapping(AppConstants.R_CATEGORY)
+	@CrossOrigin(origins = AppConstants.CORS)
 	public APIResponse getAllCategory() {
 
 		logger.info("Category retrieve Request Initialized");
