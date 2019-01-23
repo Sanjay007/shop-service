@@ -24,6 +24,11 @@ public class CategoryController {
 		this.categoryService = categoryService;
 	}
 
+	/**
+	 * Category Request
+	 * @param input
+	 * @return
+	 */
 	@PostMapping(AppConstants.R_CATEGORY)
 	@CrossOrigin(origins = AppConstants.CORS)
 	public APIResponse SaveCategory(@RequestBody CategoryInput input) {
